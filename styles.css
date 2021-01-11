@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.outer {
+  width: 100%;
+  height: 370px;
+  background: url(https://www.itl.cat/pngfile/big/306-3064800_download-cakes-pastry-dessert-strawberry-data-src-cakes.jpg);
+  background-size: cover;
+  background-position: right center;
+  position: relative;
+  overflow: hidden;
+  z-index: -1
+}
+
+.circular {
+  position: absolute;
+  width: 600px;
+  height: 650px;
+  background: #500c88;
+  opacity: 0.5;
+  border-radius: 50%;
+  top: -100px;
+  left: -100px
+}
+
+.main-text {
+  position: absolute;
+  top: 30%;
+  left: 50px;
+}
+
+.heading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+  font-weight: 300;
+  cursor: pointer;
+  color: #e79c2a;
+}
+
+.sub-heading {
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: 300;
+  text-align: center;
+  color: #
+}
+
+.blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e79c2a;
+  opacity: 0.7
+
+
+}
+
+.container-fluid {
+  width: 100%;
+  max-width: 150rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.icons {
+  position: absolute;
+  left: 110px;
+  list-style-type: none;
+  padding-right: 10%;
+  list-style: none;
+  display: flex;
+  color: white l
+}
+
+.facebook:hover {
+  color: #e79c2a
+}
+
+.facebook {
+  display: inline-block;
+  position: relative;
+  top: 100px;
+  cursor: pointer;
+  margin: 0 0 3px 0;
+  padding: 0px 0px;
+  color: white;
+  left: 150px
+
+}
+
+.pinterest {
+  display: inline-block;
+  position: relative;
+  top: 100px;
+  cursor: pointer;
+  margin: 0 0 3px 0;
+  color: white
+}
+
+.pinterest:hover {
+  color: #e79c2a
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.nav::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.open .nav::before {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav_button {
+  background-color: white;
+  height: 5rem;
+  width: 5rem;
+  position: fixed;
+  border-radius: 50%;
+  top: 2rem;
+  right: 2rem;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav_icon {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.nav_icon,
+.nav_icon::before,
+.nav_icon::after {
+  width: 2.5rem;
+  height: 2px;
+  background-color: black;
+  display: inline-block;
+}
+
+.nav_icon::before,
+.nav_icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.nav_icon::before {
+  top: -0.7rem;
+}
+
+.nav_icon::after {
+  top: 0.7rem;
+}
+
+.open .nav_icon {
+  background-color: transparent;
+}
+
+.open .nav_icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.open .nav_icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.nav-list {
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100vh;
+  background-color: black;
+  padding: 4.4rem;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 100;
+  transform: translateX(-100%);
+
+  transition: transform 0.5s;
+  display: flex;
+
+}
+
+.open .nav-list {
+  transform: translateX(0);
+}
+
+
+.nav-item {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav_link {
+  display: block;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  margin-right: -2px;
+  transition: color 0.5s;
+
+}
+
+.nav_link:hover {
+  color: #e79c2a;
+}
+
+/* Hero */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://wallpaperaccess.com/full/1462206.jpg);
+
+}
+
+.go-top {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  background: white;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #333;
+  border-radius: 50%;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+
+}
